@@ -11,3 +11,76 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.board-row{
+    display: flex;
+}
+
+.game-board {
+  margin-right: 30px;
+}
+
+.main-container {
+  margin: 20px 10px 20px 10px;
+}
+
+.cell {
+  height: 100px;
+  width: 100px;
+ 
+  text-align: center;
+ /* Add this line */
+  font-size: 100px;
+  cursor: pointer;
+  border-width: thick;
+  position: relative;
+}
+
+.game-board  button {
+  position: absolute; left:0; right: 0; 
+  width: 100px;
+  height: 100px;
+  border: 2px solid #61dafb;
+  background-color: #282c34;
+  color: #61dafb;
+}
+
+.game-over button {
+    background-color: #61dafb;
+    font-family: monospace;
+   
+}
+ body{
+    background-color: #282c34;
+    color: #61dafb;
+    font-family: monospace;
+ }
+
+
+.messages {
+  font-family: monospace;
+  font-size: large;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.board-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .board-container {
+    flex-direction: row;
+  }
+}
+
+.game-board, .messages {
+  flex: 1;
+  
+}
+
+
+
