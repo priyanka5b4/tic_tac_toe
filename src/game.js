@@ -175,6 +175,22 @@ export default function GameBoard() {
         let probablities = [];
         let null_positions = [];
 
+        if(counter === 0)
+        {
+              if(game_board[0] !== null || game_board[2] !== null || game_board[6] !== null || game_board[8] !== null)
+              {
+                return 4;
+              }
+           
+
+        }
+
+        if(counter === 2)
+        {
+            if(((game_board[0] === "X") && (game_board[8] === "X")) || ((game_board[2] == "X") && (game_board[6] == "X")) && game_board[4] === "O")
+            return 3;
+        }
+
         let winning_move_index = calculate_WinningMove(game_board , state);
        
         if(winning_move_index !== -1)
@@ -347,15 +363,24 @@ function Game_Complete()
         <ThemeProvider theme={theme}>
         <h2>Tic Tac Toe</h2>
        <div>
-        { winner !== null &&  
+        { winner === "X" &&  
                 
                     <p>
-                        Winner is {winner}
+                        Congrats you won !!!
                         
                         <Button style={{ marginLeft: "10px"  }} variant="contained" color="primary" onClick={() => window.location.reload(false)} >Play Again</Button>
                     </p>
                
                 
+        }
+        {
+            winner === "O" && 
+                
+                    <p>
+                        System Won !!!
+                        
+                        <Button style={{ marginLeft: "10px" }} variant="contained" color="primary" onClick={() => window.location.reload(false)}>Play Again</Button>
+                    </p>
         }
         { winner === null  &&  counter === 9  && 
                

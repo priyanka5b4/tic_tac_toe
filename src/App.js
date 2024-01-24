@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import GameBoard from './game';
-import YourComponent from './test';
+
 
 function App() {
   return (
